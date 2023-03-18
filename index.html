@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS4</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h2>JAVASCRIPT HANDSON-6(PROBLEM SOLVING)</h2>
+    <ol>
+    <li>Find the Smaller Angle</li>
+<pre>      
+    var Minimal_Angle = (h, m) => 
+        {
+          h=h%12;   
+          let a=(h*360)/12+(m*360)/(12*60);
+          let b=(m*360)/(60);
+          let ans=Math.abs(a-b);
+          if(ans>180){
+            ans=360-ans;
+          }
+          return ans;
+        };        
+</pre>
+    <li>Check whether the year is Leap year or not.</li>
+<pre>
+     var Check_Leap = (year) => 
+    {
+     if((year%4===0) && (year%100!==0)){
+       return 'Leap Year';
+     }
+     else if(year%400===0){
+       return 'Leap Year';
+     }
+     else{
+       return 'Non Leap Year';
+     }
+    
+    };    
+</pre>
+<li>Perfect Number Check.</li>
+<pre>
+    var Perfect_Check = (N) => 
+    {
+      if(N===1){
+        return 'YES';
+      }     
+      let sum=0;
+      for(let i=0;i<=(N/2);i++){
+        if(N%i===0){
+          sum=sum+i;
+        }
+      }
+      if(sum!==0 && N===sum){
+        return 'YES';
+      }
+      else{
+        return 'NO';
+      }
+    };       
+</pre>
+<li>Reverse a Number.</li>
+<pre>
+    var Reverse_Number = (N) => 
+    {
+      let ans=0;
+      while(N9!==0){
+       let rev=N%10; 
+       ans=ans*10+rev;
+       N=Math.floor(N/10);
+      }
+        return ans;
+    };      
+</pre>
+<li>Substring Check.</li>
+<pre>
+    var Substring_Check = (S1, S2) => 
+    {
+    if(S1.includes(S2)){
+    return 'YES';
+    }
+    else{
+    return 'NO';
+    }
+    };
+</pre>
+    </ol>
+</body>
+</html>
